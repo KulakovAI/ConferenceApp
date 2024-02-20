@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df11219dcf09438696d917cbf29dca2f" Name="Diagram1">
+        <EntityTypeShape EntityType="ConferenceModel.ActivEvent" Width="1.5" PointX="7.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.Activity" Width="1.5" PointX="8.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.Country" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.Dirictory" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.Event" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.Eventmoder" Width="1.5" PointX="3.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.Jury" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.Moderator" Width="1.5" PointX="6" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.Organizer" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.Person" Width="1.5" PointX="3" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConferenceModel.Towns" Width="1.5" PointX="3" PointY="23.625" IsExpanded="true" />
+        <AssociationConnector Association="ConferenceModel.FK_ActivEvent_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_ActivEvent_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Activity_Juri" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Activity_Juri1" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Activity_Juri2" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Activity_Juri3" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Activity_Juri4" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Activity_Moderator" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Juri_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Moderator_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Organizer_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Person_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Juri_Dirictory" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Moderator_Dirictory" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Event_Organizer1" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Event_Towns" ManuallyRouted="false" />
+        <AssociationConnector Association="ConferenceModel.FK_Moderator_Eventmoder" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
