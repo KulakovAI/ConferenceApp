@@ -20,7 +20,6 @@
                     Orientation="Vertical"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-
             <StackPanel Orientation="Horizontal"
                         Margin="5">
                 <TextBlock Text="Логин:" Width="50"

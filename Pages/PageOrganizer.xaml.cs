@@ -47,9 +47,8 @@ namespace ConferenceApp.Pages
             TxtOrganizer.Text = gender + " " + organizer.Fio.Split(' ')[1];
             TxtGetting.Text = time;
 
-            ImOrganizers.Source = new BitmapImage(new Uri("/Assets/Organizers/" + organizer.Photo, UriKind.RelativeOrAbsolute)); ;
+            Photo.Source = new BitmapImage(new Uri("/Resources/Organizers/" + organizer.Photo, UriKind.RelativeOrAbsolute)); 
         }
-
         private void BtnEvents_Click(object sender, RoutedEventArgs e)
         {
             Classes.ClassFrame.frmObj.Navigate(new PageEvents());
@@ -62,7 +61,7 @@ namespace ConferenceApp.Pages
 
         private void BtnJury_Click(object sender, RoutedEventArgs e)
         {
-            Classes.ClassFrame.frmObj.Navigate(new PagePerson());
+            Classes.ClassFrame.frmObj.Navigate(new PageJury());
         }
 
         private void BtnProfile_Click(object sender, RoutedEventArgs e)

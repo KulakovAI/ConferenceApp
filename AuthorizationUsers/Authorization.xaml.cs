@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,13 +22,13 @@ namespace ConferenceApp.AuthorizationUsers
     /// </summary>
     public partial class Authorization : Window
     {
-        //private readonly Timer timer = new Timer();
+        private readonly Timer timer = new Timer();
         private static int failCount = 0;
         public Authorization()
         {
             InitializeComponent();
-            //timer.Interval = 10_000;
-            //timer.Elapsed += (e, s) => failCount = 0;
+            timer.Interval = 10_000;
+            timer.Elapsed += (e, s) => failCount = 0;
             FillContent();
         }
 
@@ -87,7 +88,7 @@ namespace ConferenceApp.AuthorizationUsers
                     }
                     else if (moderator != null)
                     {
-                        MessageBox.Show("Добро пожаловать, " + moderator.Email + "!", "Успешная авторизация!");
+                        MessageBox.Show("Добро пожаловать, " + moderator.FIO + "!", "Успешная авторизация!");
                         MainWindow mainWindow = new MainWindow();
                         mainWindow.Show();
                         Hide();
@@ -115,12 +116,12 @@ namespace ConferenceApp.AuthorizationUsers
                 }
 
 
-                //if (failCount >= 3)
-                //{
-                //    timer.Start();
-                //    MessageBox.Show("Превышен лимит поыток!");
-                //    BtnEnter.IsEnabled = true;
-                //}
+                if (failCount >= 3)
+                {
+                    timer.Start();
+                    MessageBox.Show("Превышен лимит поыток!");
+                    BtnEnter.IsEnabled = true;
+                }
 
 
             }

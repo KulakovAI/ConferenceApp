@@ -25,7 +25,33 @@ namespace ConferenceApp.Pages
         {
             InitializeComponent();
             dtgEvent.ItemsSource = ConferenceEntities.GetContext().Event.ToList();
-            //CountRows.Text = dtgEvent.Items.Count.ToString();
+            CountRows.Text = dtgEvent.Items.Count.ToString();
+        }
+
+        private void txbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txbSearch.Text.Count() != 0) dtgEvent.ItemsSource = ConferenceEntities.GetContext().Event.Where(x => x.NameEvent.ToLower().Contains(txbSearch.Text.ToLower())).ToList();
+            if (txbSearch.Text.Count() == 0) dtgEvent.ItemsSource = ConferenceEntities.GetContext().Event.ToList();
+        }
+
+        private void MenuUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            dtgEvent.ItemsSource = ConferenceEntities.GetContext().Event.ToList();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            dtgEvent.ItemsSource = ConferenceEntities.GetContext().Event.Where(x => x.Days > 2).ToList();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            dtgEvent.ItemsSource = ConferenceEntities.GetContext().Event.Where(x => x.Days <= 2).ToList();
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            dtgEvent.ItemsSource = ConferenceEntities.GetContext().Event.ToList();
         }
     }
 }

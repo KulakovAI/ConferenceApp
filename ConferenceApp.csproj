@@ -142,11 +142,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\PageAddJury.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageAddPerson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageEvents.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PageMainMenu.xaml">
+    <Page Include="Pages\PageJury.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,11 +172,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\PageAddJury.xaml.cs">
+      <DependentUpon>PageAddJury.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageAddPerson.xaml.cs">
+      <DependentUpon>PageAddPerson.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageEvents.xaml.cs">
       <DependentUpon>PageEvents.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageMainMenu.xaml.cs">
-      <DependentUpon>PageMainMenu.xaml</DependentUpon>
+    <Compile Include="Pages\PageJury.xaml.cs">
+      <DependentUpon>PageJury.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageOrganizer.xaml.cs">
       <DependentUpon>PageOrganizer.xaml</DependentUpon>
@@ -212,9 +226,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resource\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
@@ -229,6 +241,86 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Organizers\foto1.jpg" />
+    <Resource Include="Resources\Organizers\foto10.jpg" />
+    <Resource Include="Resources\Organizers\foto2.jpg" />
+    <Resource Include="Resources\Organizers\foto3.jpg" />
+    <Resource Include="Resources\Organizers\foto4.jpg" />
+    <Resource Include="Resources\Organizers\foto5.jpg" />
+    <Resource Include="Resources\Organizers\foto6.jpg" />
+    <Resource Include="Resources\Organizers\foto7.jpg" />
+    <Resource Include="Resources\Organizers\foto8.jpg" />
+    <Resource Include="Resources\Organizers\foto9.jpg" />
+    <Resource Include="Resources\foto1.jpg" />
+    <Resource Include="Resources\foto10.jpg" />
+    <Resource Include="Resources\foto11.jpg" />
+    <Resource Include="Resources\foto12.jpg" />
+    <Resource Include="Resources\foto13.jpg" />
+    <Resource Include="Resources\foto14.jpg" />
+    <Resource Include="Resources\foto15.jpg" />
+    <Resource Include="Resources\foto16.jpg" />
+    <Resource Include="Resources\foto17.jpg" />
+    <Resource Include="Resources\foto18.jpg" />
+    <Resource Include="Resources\foto19.jpg" />
+    <Resource Include="Resources\foto2.jpg" />
+    <Resource Include="Resources\foto20.jpg" />
+    <Resource Include="Resources\foto21.jpg" />
+    <Resource Include="Resources\foto22.jpg" />
+    <Resource Include="Resources\foto23.jpg" />
+    <Resource Include="Resources\foto24.jpg" />
+    <Resource Include="Resources\foto25.jpg" />
+    <Resource Include="Resources\foto26.jpg" />
+    <Resource Include="Resources\foto27.jpg" />
+    <Resource Include="Resources\foto28.jpg" />
+    <Resource Include="Resources\foto29.jpg" />
+    <Resource Include="Resources\foto3.jpg" />
+    <Resource Include="Resources\foto30.jpg" />
+    <Resource Include="Resources\foto31.jpg" />
+    <Resource Include="Resources\foto32.jpg" />
+    <Resource Include="Resources\foto33.jpg" />
+    <Resource Include="Resources\foto34.jpg" />
+    <Resource Include="Resources\foto35.jpg" />
+    <Resource Include="Resources\foto36.jpg" />
+    <Resource Include="Resources\foto37.jpg" />
+    <Resource Include="Resources\foto38.jpg" />
+    <Resource Include="Resources\foto39.jpg" />
+    <Resource Include="Resources\foto4.jpg" />
+    <Resource Include="Resources\foto40.jpg" />
+    <Resource Include="Resources\foto41.jpg" />
+    <Resource Include="Resources\foto42.jpg" />
+    <Resource Include="Resources\foto43.jpg" />
+    <Resource Include="Resources\foto44.jpg" />
+    <Resource Include="Resources\foto45.jpg" />
+    <Resource Include="Resources\foto46.jpg" />
+    <Resource Include="Resources\foto47.jpg" />
+    <Resource Include="Resources\foto48.jpg" />
+    <Resource Include="Resources\foto49.jpg" />
+    <Resource Include="Resources\foto5.jpg" />
+    <Resource Include="Resources\foto50.jpg" />
+    <Resource Include="Resources\foto51.jpg" />
+    <Resource Include="Resources\foto52.jpg" />
+    <Resource Include="Resources\foto53.jpg" />
+    <Resource Include="Resources\foto54.jpg" />
+    <Resource Include="Resources\foto55.jpg" />
+    <Resource Include="Resources\foto56.jpg" />
+    <Resource Include="Resources\foto57.jpg" />
+    <Resource Include="Resources\foto58.jpg" />
+    <Resource Include="Resources\foto59.jpg" />
+    <Resource Include="Resources\foto6.jpg" />
+    <Resource Include="Resources\foto60.jpg" />
+    <Resource Include="Resources\foto61.jpg" />
+    <Resource Include="Resources\foto62.jpg" />
+    <Resource Include="Resources\foto63.jpg" />
+    <Resource Include="Resources\foto64.jpg" />
+    <Resource Include="Resources\foto65.jpg" />
+    <Resource Include="Resources\foto66.jpg" />
+    <Resource Include="Resources\foto67.jpg" />
+    <Resource Include="Resources\foto68.jpg" />
+    <Resource Include="Resources\foto69.jpg" />
+    <Resource Include="Resources\foto7.jpg" />
+    <Resource Include="Resources\foto70.jpg" />
+    <Resource Include="Resources\foto8.jpg" />
+    <Resource Include="Resources\foto9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

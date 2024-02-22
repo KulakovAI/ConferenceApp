@@ -5,38 +5,40 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ConferenceApp.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageEvents">
+      d:DesignHeight="500" d:DesignWidth="1000  "
+      Title="Мероприятия">
 
     <Grid>
-        <!--<StackPanel Orientation="Horizontal" Margin="0,5,0,0" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="10,5,0,0" VerticalAlignment="Top">
             <TextBlock Text="Поиск по названию:" Style="{StaticResource StyleTxtSearch}" VerticalAlignment="Center"/>
-            <TextBox Name="txbSearch" TextChanged="TxbSearch_TextChanged" Style="{StaticResource StyleTxb}" Width="200"/>
-            <TextBlock Text="Количество записей: " HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleTxtSearch}"/>
+            <TextBox Name="txbSearch" TextChanged="txbSearch_TextChanged" Style="{StaticResource StyleTxb}" Width="200"/>
+            <TextBlock Text="Количество мероприятий: " HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleTxtSearch}"/>
             <TextBlock Name="CountRows" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleTxtSearch}"/>
-        </StackPanel>-->
+        </StackPanel>
         <DataGrid Name="dtgEvent" Grid.Column="1" Style="{StaticResource StyleDataGrid}" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Название" Width="auto" Binding="{Binding NameEvent}"/>
+                <DataGridTextColumn Header="Название" Width="2*" Binding="{Binding NameEvent}"/>
                 <DataGridTextColumn Header="Дата" Width="1*" Binding="{Binding Date, StringFormat='dd.MM.yyyy'}"/>
                 <DataGridTextColumn Header="Город" Width="1*" Binding="{Binding Towns.NameCity}"/>
+                <DataGridTextColumn Header="Количество дней" Width="1*" Binding="{Binding Days}"/>
+                <DataGridTextColumn Header="Организатор" Width="1*" Binding="{Binding Organizer.Fio}"/> 
             </DataGrid.Columns>
-            <!--<DataGrid.ContextMenu>
+            <DataGrid.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Добавить" Name="MenuAdd" Click="MenuAdd_Click"/>
-                    <MenuItem Header="Редактировать" Name="MenuEdit" Click="MenuEdit_Click"/>
                     <MenuItem Header="Обновить" Name="MenuUpdate" Click="MenuUpdate_Click"/>
                     <Separator/>
-                    <MenuItem Header="Удалить" Name="MenuDel" Click="MenuDel_Click" />
-                    <Separator/>
-                    <MenuItem Header="Сортировка по названию">
-                        <MenuItem Header="От А до Я" Click="MenuOrderBy_Click"/>
-                        <MenuItem Header="От Я до А" Click="MenuOrderByDescending_Click"/>
+                    <MenuItem Header="Фильтрация по дням">
+                        <MenuItem Header="От трёх дней" Click="MenuItem_Click"/>
+                        <MenuItem Header="До двух дней" Click="MenuItem_Click_1"/>
                         <Separator/>
-                        <MenuItem Header="Cброс" Click="MenuUpdate_Click"/>
+                        <MenuItem Header="Сброс" Click="MenuItem_Click_2"/>
                     </MenuItem>
                 </ContextMenu>
-            </DataGrid.ContextMenu>-->
+            </DataGrid.ContextMenu>
         </DataGrid>
     </Grid>
 </Page>

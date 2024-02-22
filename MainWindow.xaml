@@ -17,7 +17,6 @@
                     HorizontalAlignment="Center">
             <Button Name="BtnAuthoriz" Click="BtnAuthoriz_Click">
                 <StackPanel Orientation="Horizontal">
-                    <!--<Image Source="Assets/Authorization.png" Width="20" Height="20" Margin="5 0"/>-->
                     <TextBlock Text="Авторизация" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>

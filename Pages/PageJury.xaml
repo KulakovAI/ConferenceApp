@@ -1,0 +1,59 @@
+﻿<Page x:Class="ConferenceApp.Pages.PageJury"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ConferenceApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Жюри">
+
+    <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="10,5,0,0" VerticalAlignment="Top">
+            <TextBlock Text="Поиск по почте:" Style="{StaticResource StyleTxtSearch}" VerticalAlignment="Center"/>
+            <TextBox Name="txbSearch" TextChanged="txbSearch_TextChanged" Style="{StaticResource StyleTxb}" Width="200"/>
+            <TextBlock Text="Количество жюри: " HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleTxtSearch}"/>
+            <TextBlock Name="CountRows" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleTxtSearch}"/>
+        </StackPanel>
+        <DataGrid Name="dtgJury" Style="{StaticResource StyleDataGrid}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="auto" Header="Фото">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width="90" Stretch="UniformToFill" HorizontalAlignment="Left" Margin="5">
+                                <Image.Source>
+                                    <Binding Path="Photo">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>
+                                                C:\Users\godiw\Desktop\Практика\Conference\ConferenceApp\Resources\foto1.jpg
+                                            </ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Почта" Width="auto" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Дата рождения" Width="1*" Binding="{Binding DateBirthday, StringFormat='dd.MM.yyyy'}"/>
+                <DataGridTextColumn Header="Страна" Width="1*" Binding="{Binding Country.NameCountry}"/>
+                <DataGridTextColumn Header="Телефон" Width="1*" Binding="{Binding Phone}"/>
+                <DataGridTextColumn Header="Пароль" Width="1*" Binding="{Binding Password}"/>
+                <DataGridTextColumn Header="Направление" Width="1*" Binding="{Binding Dirictory.NameDir}"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Добавить" Name="MenuAdd" Click="MenuAdd_Click"/>
+                    <MenuItem Header="Редактировать" Name="MenuEdit" Click="MenuEdit_Click_1"/>
+                    <MenuItem Header="Обновить" Name="MenuUpdate" Click="MenuUpdate_Click"/>
+                    <Separator/>
+                    <MenuItem Header="Удалить" Name="MenuDel" Click="MenuDel_Click" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+    </Grid>
+</Page>

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ConferenceApp.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageOrganizer">
+      Title="Окно организатора">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -30,9 +30,9 @@
             Grid.Row="2"
             Grid.Column="0">
             <Border BorderThickness="1" BorderBrush="Gray">
-                <Image Name="ImOrganizers"
+                <Image Name="Photo"
                    Width="150"
-                   Height="200"/>
+                   Height="200" Stretch="UniformToFill"/>
             </Border>
             <Button Content="Мой профиль" Name="BtnProfile"
             Click="BtnProfile_Click"

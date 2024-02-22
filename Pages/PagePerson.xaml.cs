@@ -24,7 +24,52 @@ namespace ConferenceApp.Pages
         public PagePerson()
         {
             InitializeComponent();
-            dtgPers.ItemsSource = ConferenceEntities.GetContext().Event.ToList();
+            dtgPers.ItemsSource = ConferenceEntities.GetContext().Person.ToList();
         }
+
+        private void MenuAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.ClassFrame.frmObj.Navigate(new PageAddPerson(null));
+        }
+
+        private void MenuEdit_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.ClassFrame.frmObj.Navigate(new PageAddPerson((Person)dtgPers.SelectedItem));
+        }
+
+        private void MenuUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            dtgPers.ItemsSource = ConferenceEntities.GetContext().Person.ToList();
+        }
+
+        private void MenuDel_Click(object sender, RoutedEventArgs e)
+        {
+            var PersForRemoving = dtgPers.SelectedItems.Cast<Person>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {PersForRemoving.Count()} записи?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    ConferenceEntities.GetContext().Person.RemoveRange(PersForRemoving);
+                    ConferenceEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены!");
+                    dtgPers.ItemsSource = ConferenceEntities.GetContext().Person.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void MenuOrderBy_Click(object sender, RoutedEventArgs e)
+        {
+            dtgPers.ItemsSource = ConferenceEntities.GetContext().Person.OrderBy(x => x.DateBirthday).ToList();
+        }
+
+        private void MenuOrderByDescending_Click(object sender, RoutedEventArgs e)
+        {
+            dtgPers.ItemsSource = ConferenceEntities.GetContext().Person.OrderByDescending(x => x.DateBirthday).ToList();
+        }
+
     }
 }

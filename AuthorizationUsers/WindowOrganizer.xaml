@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConferenceApp.AuthorizationUsers"
         mc:Ignorable="d"
-        Title="Окно организатора" Height="450" Width="800">
+        Title="Окно организатора" MinHeight="600" MinWidth="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -20,7 +20,6 @@
                     Name="BtnBack" Click="BtnBack_Click" 
                     Margin="30 0 0 0"/>
         </StackPanel>
-
         <Frame Name="frmOrg" 
                NavigationUIVisibility="Hidden"
                ContentRendered="frmOrg_ContentRendered"

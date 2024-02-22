@@ -6,25 +6,36 @@
       xmlns:local="clr-namespace:ConferenceApp.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PagePerson">
+      Title="Участники">
 
     <Grid>
-        <!--<StackPanel Orientation="Horizontal" Margin="0,5,0,0" VerticalAlignment="Top">
-            <TextBlock Text="Поиск по названию:" Style="{StaticResource StyleTxtSearch}" VerticalAlignment="Center"/>
-            <TextBox Name="txbSearch" TextChanged="TxbSearch_TextChanged" Style="{StaticResource StyleTxb}" Width="200"/>
-            <TextBlock Text="Количество записей: " HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleTxtSearch}"/>
-            <TextBlock Name="CountRows" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleTxtSearch}"/>
-        </StackPanel>-->
-        <DataGrid Name="dtgPers" Margin="0 50 0 0" Style="{StaticResource StyleDataGrid}">
+        <DataGrid Name="dtgPers" Style="{StaticResource StyleDataGrid}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ФИО" Width="auto" Binding="{Binding Fio}"/>
+                <DataGridTemplateColumn Width="auto" Header="Фото">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Width="90" Stretch="UniformToFill" HorizontalAlignment="Left" Margin="5">
+                                    <Image.Source>
+                                        <Binding Path="Photo">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>
+                                                    \Resources\foto1.jpg
+                                                </ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="ФИО" Width="3*" Binding="{Binding Fio}"/>
                 <DataGridTextColumn Header="Почта" Width="auto" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Дата рождения" Width="1*" Binding="{Binding DateBirthday}"/>
-                <DataGridTextColumn Header="Страна" Width="1*" Binding="{Binding County.NameCounty}"/>
+                <DataGridTextColumn Header="Дата рождения" Width="1*" Binding="{Binding DateBirthday, StringFormat='dd.MM.yyyy'}"/>
+                <DataGridTextColumn Header="Страна" Width="1*" Binding="{Binding Country.NameCountry}"/>
                 <DataGridTextColumn Header="Пол" Width="1*" Binding="{Binding Gender}"/>
                 <DataGridTextColumn Header="Пароль" Width="1*" Binding="{Binding Password}"/>
             </DataGrid.Columns>
-            <!--<DataGrid.ContextMenu>
+            <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Добавить" Name="MenuAdd" Click="MenuAdd_Click"/>
                     <MenuItem Header="Редактировать" Name="MenuEdit" Click="MenuEdit_Click"/>
@@ -32,14 +43,14 @@
                     <Separator/>
                     <MenuItem Header="Удалить" Name="MenuDel" Click="MenuDel_Click" />
                     <Separator/>
-                    <MenuItem Header="Сортировка по названию">
-                        <MenuItem Header="От А до Я" Click="MenuOrderBy_Click"/>
-                        <MenuItem Header="От Я до А" Click="MenuOrderByDescending_Click"/>
+                    <MenuItem Header="Сортировка по дате рождения">
+                        <MenuItem Header="по возрастанию" Click="MenuOrderBy_Click"/>
+                        <MenuItem Header="по убыванию" Click="MenuOrderByDescending_Click"/>
                         <Separator/>
                         <MenuItem Header="Cброс" Click="MenuUpdate_Click"/>
                     </MenuItem>
-                </ContextMenu>-->
-            <!--</DataGrid.ContextMenu>-->
+                </ContextMenu>
+            </DataGrid.ContextMenu>
         </DataGrid>
     </Grid>
 </Page>
